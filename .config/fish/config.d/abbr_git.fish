@@ -1,0 +1,18 @@
+# git related
+abbr gs "git status"
+abbr gc "git checkout"
+abbr gcm 'git commit -m ""'
+abbr gcl "git clone"
+abbr gp "git pull"
+abbr gpp "git push -u origin"
+abbr gpu "git push -u upstream"
+abbr gf "git fetch origin --prune"
+abbr gfu "git fetch upstream --prune"
+abbr gl "git log"
+abbr gb "git branch"
+abbr gcb "git checkout -b"
+abbr gcm "git commit -m"
+abbr gca "git commit --amend"
+abbr gd "git diff --output-indicator-new=' ' --output-indicator-old=' '"
+abbr gadd "git add ."
+abbr gl "git log --all --graph"

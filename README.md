@@ -2,8 +2,18 @@
 
 ## Setup
 
+Clone repository
+
 ```bash
 yadm clone git@github.com:piyoki/macos-dotfiles.git
+```
+
+Use default gitconfig
+
+```ini
+# ~/.config/yadm/config
+[include]
+  path=~/.gitconfig
 ```
 
 ## Submodules

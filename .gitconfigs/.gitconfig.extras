@@ -1,0 +1,13 @@
+[user]
+  name = hirotopiaaa
+  email = 156312588+hirotopiaaa@users.noreply.github.com
+  signingkey = 52D6E915D2B90A45143D1A127279B6681FE95DF2
+
+[core]
+  sshCommand = "ssh -i ~/.ssh/id_rsa_h_user -o IdentitiesOnly=yes"
+
+[commit]
+  gpgSign = true
+
+[tag]
+  forceSignAnnotated = true

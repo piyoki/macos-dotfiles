@@ -1,0 +1,13 @@
+[user]
+  name = kev
+  email = 31861128+piyoki@users.noreply.github.com
+  signingkey = 03F0DA2F40D284FCB33A182A72342911D7967CEB
+
+[core]
+  sshCommand = "ssh -i ~/.ssh/id_rsa_yubikey.pub -o IdentitiesOnly=yes"
+
+[commit]
+  gpgSign = true
+
+[tag]
+  forceSignAnnotated = true

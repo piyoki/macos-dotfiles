@@ -1,0 +1,13 @@
+[user]
+  name = sumire88
+  email = 151038614+sumire88@users.noreply.github.com
+  signingkey = 017FA7C42DEB0AEF9A0C7D6B94D6346D64755A07
+
+[core]
+  sshCommand = "ssh -i ~/.ssh/id_rsa_s_user -o IdentitiesOnly=yes"
+
+[commit]
+  gpgSign = true
+
+[tag]
+  forceSignAnnotated = true

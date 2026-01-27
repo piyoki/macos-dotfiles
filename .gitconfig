@@ -1,0 +1,134 @@
+[includeIf "gitdir:~/Workspace/school/"] # include for all .git projects under $HOME/Workspace/school/
+  path = ~/.gitconfigs/.gitconfig.extras
+
+[includeIf "gitdir:~/Workspace/work/"] # include for all .git projects under $HOME/Workspace/work/
+  path = ~/.gitconfigs/.gitconfig.work
+
+[includeIf "gitdir:~/Workspace/extras/"] # include for all .git projects under $HOME/Workspace/extras/
+  path = ~/.gitconfigs/.gitconfig.extras
+
+[includeIf "gitdir:~/flake/"] # include for all .git projects under $HOME/flake/
+  path = ~/.gitconfigs/.gitconfig.personal
+
+[includeIf "gitdir:~/Workspace/private/"] # include for all .git projects under $HOME/Workspace/private/
+  path = ~/.gitconfigs/.gitconfig.personal
+
+[includeIf "gitdir:~/Workspace/personal/"] # include for all .git projects under $HOME/Workspace/personal/
+  path = ~/.gitconfigs/.gitconfig.personal
+
+[includeIf "gitdir:~/.local/share/"] # include for all .git projects under $HOME/.local/share/
+  path = ~/.gitconfigs/.gitconfig.personal
+
+[url "git@github.com:piyoki"]
+  insteadOf = "piyoki:"
+
+[url "git@github.com"]
+  insteadOf = "gh:"
+
+[core]
+  editor = vim
+  pager = less
+  excludesfile = ~/.gitignore # valid everywhere
+  preloadindex = true
+
+[init]
+  defaultBranch = master
+
+[status]
+  showStash = true
+  showUntrackedFiles = all
+
+[advice]
+  addEmptyPathspec = false
+  pushNonFastForward = false
+  statusHints = false
+
+[merge]
+  conflictstyle = diff3
+  tool = vimdiff
+
+[interactive]
+  diffFilter = delta --color-only --features=interactive
+
+[push]
+  autoSetupRemote = true
+  default = current
+  followTags = false
+
+[pull]
+  default = current
+  rebase = true
+
+[log]
+  abbrevCommit = true
+  graphColors = blue,yellow,cyan,magenta,green,red
+
+[branch]
+  sort = -commiterdate
+
+[tag]
+  sort = -taggerdate
+
+[pager]
+  branch = false
+  tag = false
+
+[color "decorate"]
+  HEAD = red
+  branch = blue
+  tag = yellow
+  remoteBranch = magenta
+
+[alias]
+  # basic
+  s = "status"
+  cb = "checkout -b" # checkout a new branch via `git cb <branch>`
+  cm = "commit -m" # commit via `git cm <message>`
+  co = "checkout"
+  ca = "commit -am" # commit all changes via `git ca <message>`
+  dc = "diff --cached"
+  swc = "git switch -C" # <local_branch> <remote/branch> - reset local branch to specific remote branch
+  amend = "commit --amend" # amend commit message via `git amend <message>`
+  unstage = "reset HEAD --" # unstage file via `git unstage <file>`
+  undo = "reset --soft HEAD~" # undo last commit via `git undo`
+  nonexist = "remote prune origin --dry-run" # list non-exist(remote) branches via `git nonexist`
+  pp = "push -u origin" # push to remote via `git pp <branch>`
+  head = "rev-parse HEAD"
+  msg = "show -s --format=%s HEAD"
+  last = "log -1 HEAD" # check last commit metadata from HEAD via `git last`
+
+  # advanced
+  # delete non-exist(remote) branches
+  delnonexist = "remote prune origin"
+
+  # submodule interactions
+  submodule-remote = "submodule update --remote --recursive"
+  submodule-init = "submodule update --init --recursive"
+
+[delta]
+  ; (cmd to check current config) delta --diff-so-fancy --show-config
+  tabs = 2
+  navigate = true
+  light = false
+  line-numbers = true
+  syntax-theme = "Visual Studio Dark+"
+  side-by-side = true
+  features = decorations
+  true-color = always
+
+[delta "interactive"]
+  keep-plus-minus-markers = false
+
+[delta "decorations"]
+  commit-decoration-style = blue ol
+  commit-style = raw
+  file-style = omit
+  hunk-header-decoration-style = "#ccccff box"
+  ; hunk-header-file-style = white
+  hunk-header-file-style = "#ccccff"
+  hunk-header-style = file line-number syntax
+  grep-line-number-style = "#ccccff"
+  line-numbers-left-style = "#404040"
+  line-numbers-right-style = "#404040"
+  line-numbers-plus-style = bold green 22
+  line-numbers-minus-style = bold red 52
